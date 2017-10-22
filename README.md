@@ -2,17 +2,30 @@
 
 An example (Attentional) Encoder-Decoder RNN in PyTorch, applied to a toy data set: translating back and forth between numbers-as-text ("one thousand and two") and numbers-as-digits ("1002").
 
+### Introduction
+
+This project began as an attempt to code up an implementation of attentional RNNs against a simple data set, to understand the inner-workings of the attention mechanism. It turns out that the implementation can get fairly non-trivial.
+
+In particular, the attention portions of the code heavily referenced the implementation in https://github.com/spro/practical-pytorch/tree/master/seq2seq-translation.
+
+![Attention Plot](static/attn.png)
+
+*Attention plot between input (top) and output (left). The attention isn't perfect because our models can be way over-parameterized compared the the problem.*
+
+
 ### Requirements
 - Python 3.6
 - [PyTorch 0.2.0](http://pytorch.org/)
 - (For generating data) `num2words`, `tqdm`
 - `pandas`, `argparse`, `matplotlib`, `seaborn`
 
+
 ### Data
 
 Using `num2words`, we can generate random numbers and get the "ground-truth" text versions of those numbers. Commas are removed, and the remaining tokens have been pre-computed and saved in (`datafiles/word2num_tokens`)[datafiles/word2num_tokens]. 
 
 Note that `num2num` supports both word-level and character-level modeling, so both tokenizations have been pre-computed.
+
 
 ### Usage
 

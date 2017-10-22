@@ -1,3 +1,4 @@
 datafiles/*.csv
 output
 *.pyc
+.DS_Store
